@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'minireset.min.css';
+
+:root {
+  --system-font-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --system-font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+html,
+body {
+  font-size: 10px;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #000000;
+  font: 1.4rem var(--system-font-sans-serif);
+}
+
+.book-wrapper {
+  column-gap: 60px;
+  display: flex;
+  flex-flow: wrap;
+  padding: 30px;
+  row-gap: 60px;
+}
+
+.book {
+  column-gap: 15px;
+  display: flex;
+  row-gap: 15px;
+}
+
+.book-cover {
+  width: 100px;
+}
+
+.book-information {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  font: italic 1.75em bold var(--system-font-serif);
+}
+
+.book-author span {
+  text-decoration: underline;
+}
