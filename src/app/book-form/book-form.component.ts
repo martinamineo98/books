@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { BookListComponent  } from '../book-list/book-list.component';
+import { BookListComponent } from '../book-list/book-list.component';
 
 
 @Component({
@@ -34,6 +34,7 @@ export class BookFormComponent {
     this.book.cover = '../../assets/cover.png'
     console.log(this.book)
     this.bookListComponent.addBook(this.book)
+    
   }
 
 }

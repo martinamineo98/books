@@ -22,6 +22,14 @@ export class BookListComponent {
   p: number = 1
   books: Book[] = data
 
+  ngOnInit() {
+    const books = { ... localStorage }
+
+    for (let book in books) {
+      this.books.push(JSON.parse(books[book]))
+    }
+  }
+
   sendBook (id: number) {
     this.bookEvent.emit(this.books[id])
   }
@@ -29,6 +37,7 @@ export class BookListComponent {
   addBook (book: any) {
     book.id = this.books.length + 1
     this.books.push(book)
+    localStorage.setItem(book.id, JSON.stringify(book))
   }
 
 }
