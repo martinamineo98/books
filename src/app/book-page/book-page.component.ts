@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap} from '@angular/router'
+import { BookListComponent } from '../book-list/book-list.component';
 
 @Component({
   selector: 'app-book-page',
@@ -9,4 +10,11 @@ import { Router, ActivatedRoute, ParamMap} from '@angular/router'
 
 export class BookPageComponent {
 
+  book: any
+
+  receiveBook ($event: any) {
+    this.book = $event
+    console.log(this.book)
+  }
+  
 }
