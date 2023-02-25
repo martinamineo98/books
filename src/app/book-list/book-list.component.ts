@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import data from './../books.json'
 
 interface Book {
@@ -16,7 +16,14 @@ interface Book {
 })
 
 export class BookListComponent {
+
+  @Output() bookEvent = new EventEmitter<any>()
+
   p: number = 1
   books: Book[] = data
-  showBookPage: boolean = false
+
+  sendBook (id: number) {
+    this.bookEvent.emit(this.books[id])
+  }
+
 }

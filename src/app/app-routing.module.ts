@@ -4,9 +4,7 @@ import { BookPageComponent } from './book-page/book-page.component';
 import { BookListComponent } from './book-list/book-list.component';
 
 const routes: Routes = [
-  { path: 'books', component: BookListComponent },
-  { path: 'books/1/john doe/this is a fake title for a fake book', component: BookPageComponent },
-  { path: 'books/2/john doe/this is a fake title for a fake book', component: BookPageComponent },
+  { path: 'book', component: BookPageComponent }
 ];
 
 @NgModule({
