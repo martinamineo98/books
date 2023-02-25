@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import data from './../books.json'
+import { DataService } from '../data.service';
 
 interface Book {
   id: number,
@@ -19,4 +20,13 @@ export class BookListComponent {
   p: number = 1
   books: Book[] = data
   showBookPage: boolean = false
+
+  constructor(
+    private dataService: DataService,
+  ) { }
+
+  setBook(book: any) {
+    this.dataService.setBook(book);
+    console.log('setBook', book);
+  }
 }

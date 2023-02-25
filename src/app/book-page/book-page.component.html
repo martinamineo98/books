@@ -1,3 +1,11 @@
 <div class="book-page">
   <p>book-page-component</p>
+
+  <img class="book-cover" src="{{ selectedBook.cover }}" alt="{{ selectedBook.title}}">
+    <div class="book-information">
+      <h2 class="book-title">ID: {{ selectedBook.id }} </h2>
+      <h3 class="book-title">{{ selectedBook.title }} </h3>
+      <span class="book-description">{{ selectedBook.description }}</span>
+      <span class="book-author"><span>Book written by:</span> {{ selectedBook.author }}</span>
+    </div>
 </div>

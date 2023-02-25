@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap} from '@angular/router'
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-book-page',
@@ -8,5 +8,16 @@ import { Router, ActivatedRoute, ParamMap} from '@angular/router'
 })
 
 export class BookPageComponent {
+  constructor(
+    private dataService: DataService,
+  ) { }
 
+  selectedBook: any;
+
+  ngOnInit() {
+    this.dataService.selectedBook$.subscribe((book) => {
+      this.selectedBook = book;
+      console.log('detail', book);
+    });
+  }
 }
