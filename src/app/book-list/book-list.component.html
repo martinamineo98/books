@@ -1,7 +1,10 @@
+<label for="book-search">Search: </label>
+<input [(ngModel)]="searchFilter"  type="search" id="book-search" name="book-search">
+
 <app-book-form></app-book-form>
 
 <div class="book-wrapper">
-  <div class="book" *ngFor="let book of books | paginate: { itemsPerPage: 3, currentPage: p }">
+  <div class="book" *ngFor="let book of books | filter:searchFilter | paginate: { itemsPerPage: 3, currentPage: p }">
     <img class="book-cover" src="{{ book.cover }}" alt="{{ book.title}}">
     <div class="book-information">
       <h3 class="book-title"><a routerLink="book" (click)="sendBook(book.id)">{{ book.title }}</a></h3>

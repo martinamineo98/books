@@ -22,6 +22,8 @@ export class BookListComponent {
   p: number = 1
   books: Book[] = data
 
+  searchFilter: string = ''
+
   ngOnInit() {
     const books = { ... localStorage }
 
