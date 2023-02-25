@@ -17,34 +17,3 @@ body {
   color: #000000;
   font: 1.4rem var(--system-font-sans-serif);
 }
-
-.book-wrapper {
-  column-gap: 60px;
-  display: flex;
-  flex-flow: wrap;
-  padding: 30px;
-  row-gap: 60px;
-}
-
-.book {
-  column-gap: 15px;
-  display: flex;
-  row-gap: 15px;
-}
-
-.book-cover {
-  width: 100px;
-}
-
-.book-information {
-  display: flex;
-  flex-direction: column;
-}
-
-.book-title {
-  font: italic 1.75em bold var(--system-font-serif);
-}
-
-.book-author span {
-  text-decoration: underline;
-}

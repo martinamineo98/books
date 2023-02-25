@@ -18,4 +18,5 @@ interface Book {
 export class BookListComponent {
   p: number = 1
   books: Book[] = data
+  showBookPage: boolean = false
 }
