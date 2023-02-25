@@ -1,0 +1,24 @@
+<form id="book-form" [formGroup]="bookForm">
+
+  <fieldset>
+
+    <div>
+      <label for="book-title">Title: </label>
+      <input type="text" id="book-title" formControlName="title">
+    </div>
+
+    <div>
+      <label for="book-author">Author: </label>
+      <input type="text" id="book-author" formControlName="author">
+    </div>
+
+    <div>
+      <label for="book-description">Description: </label>
+      <input type="text" id="book-description" formControlName="description">
+    </div>
+
+  </fieldset>
+  
+  <button type="button" (click)="onSubmit($event)">submit</button>
+
+</form>

@@ -1,3 +1,5 @@
+<app-book-form></app-book-form>
+
 <div class="book-wrapper">
   <div class="book" *ngFor="let book of books | paginate: { itemsPerPage: 3, currentPage: p }">
     <img class="book-cover" src="{{ book.cover }}" alt="{{ book.title}}">

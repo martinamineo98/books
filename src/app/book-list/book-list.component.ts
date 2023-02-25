@@ -26,4 +26,9 @@ export class BookListComponent {
     this.bookEvent.emit(this.books[id])
   }
 
+  addBook (book: any) {
+    book.id = this.books.length + 1
+    this.books.push(book)
+  }
+
 }
