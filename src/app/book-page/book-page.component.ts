@@ -16,10 +16,9 @@ export class BookPageComponent {
     private sharedDataService: SharedDataService
   ) {}
   
-  ngOnInit(): void {
+  ngOnInit() {
     this.sharedDataService.selectedBook.subscribe((book) => {
       this.book = book
-      console.log(this.book)
     })
   }
 

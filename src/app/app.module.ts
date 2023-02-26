@@ -17,13 +17,15 @@ import { BookFormComponent } from './book-form/book-form.component';
 // Ng2SearchPipeModule
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { BookSearchComponent } from './book-search/book-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookPageComponent,
     BookListComponent,
-    BookFormComponent
+    BookFormComponent,
+    BookSearchComponent
   ],
   imports: [
     BrowserModule,

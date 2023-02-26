@@ -1,18 +1,16 @@
-<label for="book-search">Search: </label>
-<input [(ngModel)]="searchFilter"  type="search" id="book-search" name="book-search">
-
-<app-book-form></app-book-form>
-
-<div *ngIf="router.url === '/'" class="book-wrapper">
-  <div class="book" *ngFor="let book of books | filter:searchFilter | paginate: { itemsPerPage: 3, currentPage: p }">
-    <img class="book-cover" src="{{ book.cover }}" alt="{{ book.title}}">
-    <div class="book-information">
-      <h3 class="book-title"><a routerLink="book" (click)="setBook(book)">{{ book.title }}</a></h3>
-      <span class="book-description">{{ book.description }}</span>
-      <span class="book-author"><span>Book written by:</span> {{ book.author }}</span>
+<div class="book-wrapper">
+  <div *ngIf="router.url === '/'" class="book-loop">
+    <div class="book" *ngFor="let book of books | filter:searchFilter | paginate: { itemsPerPage: 3, currentPage: p }">
+      <img class="book-cover" src="{{ book.cover }}" alt="{{ book.title}}">
+      <div class="book-information">
+        <h3 class="book-title"><a routerLink="book" (click)="setBook(book)">{{ book.title }}</a></h3>
+        <span class="book-description">{{ book.description }}</span>
+        <span class="book-author"><span>Book written by:</span> {{ book.author }}</span>
+      </div>
     </div>
   </div>
+  
+  <router-outlet></router-outlet>
 </div>
 
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
-<router-outlet></router-outlet>
+<pagination-controls (pageChange)="p = $event" *ngIf="router.url === '/'"></pagination-controls>

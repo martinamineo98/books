@@ -34,6 +34,10 @@ export class BookListComponent {
     for (let book in books) {
       this.books.push(JSON.parse(books[book]))
     }
+
+    this.sharedDataService.selectedSearchFilter.subscribe((searchFilter) => {
+      this.searchFilter = searchFilter
+    })
   }
 
   addBook (book: any) {
