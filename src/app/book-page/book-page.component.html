@@ -1,5 +1,8 @@
-<app-book-list (bookEvent)="receiveBook($event)"></app-book-list>
-
-<div class="book-page">
-  <p>Book Page</p>
+<div class="book-page book">
+  <img class="book-cover" src="{{ book.cover }}" alt="{{ book.title}}">
+  <div class="book-information">
+    <h3 class="book-title">{{ book.title }}</h3>
+    <span class="book-description">{{ book.description }}</span>
+    <span class="book-author"><span>Book written by:</span> {{ book.author }}</span>
+  </div>
 </div>

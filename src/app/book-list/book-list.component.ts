@@ -1,4 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { SharedDataService } from '../shared-data.service';
 import data from './../books.json'
 
 interface Book {
@@ -17,12 +19,14 @@ interface Book {
 
 export class BookListComponent {
 
-  @Output() bookEvent = new EventEmitter<any>()
-
   p: number = 1
   books: Book[] = data
-
   searchFilter: string = ''
+
+  constructor(
+    private sharedDataService: SharedDataService,
+    public router: Router
+  ) {}
 
   ngOnInit() {
     const books = { ... localStorage }
@@ -32,14 +36,14 @@ export class BookListComponent {
     }
   }
 
-  sendBook (id: number) {
-    this.bookEvent.emit(this.books[id])
-  }
-
   addBook (book: any) {
     book.id = this.books.length + 1
     this.books.push(book)
     localStorage.setItem(book.id, JSON.stringify(book))
+  }
+
+  setBook(book: any) {
+    this.sharedDataService.setBook(book)
   }
 
 }
