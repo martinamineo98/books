@@ -6,6 +6,27 @@
     "author": "john doe",
     "description": "this is a fake description for a fake book",
     "cover": "./assets/cover.png"
+  },
+  {
+    "id": 2,
+    "title": "this is another fake title for another fake book",
+    "author": "jane doe",
+    "description": "this is another fake description for another fake book",
+    "cover": "./assets/cover.png"
+  },
+  {
+    "id": 3,
+    "title": "this is a very long fake title for another fake book",
+    "author": "john smith",
+    "description": "this a very long fake description for another fake book",
+    "cover": "./assets/cover.png"
+  },
+  {
+    "id": 4,
+    "title": "this is a short title",
+    "author": "maria rossi",
+    "description": "this is a short description",
+    "cover": "./assets/cover.png"
   }
-  
+
 ]

@@ -92,6 +92,7 @@ fieldset {
 }
 
 .book-cover {
+  height: 160px;
   width: 100px;
 }
 
@@ -106,6 +107,24 @@ fieldset {
 
 .book-author span {
   text-decoration: underline;
+}
+
+/* BOOK-EDITING-BLOCK */
+
+.book-editing-block {
+  height: 0px;
+  overflow: hidden;
+  transition: height .25s ease-in-out;
+}
+
+.book-editing-block.show {
+  height: 100%;
+}
+
+.book-editing-block fieldset {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
 }
 
 /* BOOK-FORM */

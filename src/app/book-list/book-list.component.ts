@@ -63,9 +63,9 @@ export class BookListComponent {
     this.p = 1
   }
 
-  editBook (book: any) {
-    this.books[this.books.indexOf(book)] = book
-    localStorage.setItem(book.id, JSON.stringify(book))
+  editBook (ogBook: any, newBook: any) {
+    this.books[this.books.indexOf(ogBook)] = newBook
+    localStorage.setItem(ogBook.id, JSON.stringify(newBook))
 
     this.p = 1
   }
