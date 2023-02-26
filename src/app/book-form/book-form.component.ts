@@ -28,13 +28,11 @@ export class BookFormComponent {
   }
 
   onSubmit(e: any) {
-
     e.preventDefault()
     this.book = this.bookForm.value
     this.book.cover = '../../assets/cover.png'
     this.bookListComponent.addBook(this.book)
     this.bookForm.reset()
-    
   }
 
 }

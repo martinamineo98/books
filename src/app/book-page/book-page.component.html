@@ -6,5 +6,9 @@
       <span class="book-description">{{ book.description }}</span>
       <span class="book-author"><span>Book written by:</span> {{ book.author }}</span>
     </div>
+
+    <div class="book-editing">
+      <button [routerLink]="['/']" (click)="deleteBook(book)" type="button">delete</button>
+    </div>
   </div>
 </div>

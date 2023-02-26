@@ -43,13 +43,31 @@ export class BookListComponent {
   }
 
   addBook (book: any) {
-    book.id = this.books.length + 1
+    book.id = this.books[this.books.length - 1].id + 1
     this.books.push(book)
     localStorage.setItem(book.id, JSON.stringify(book))
   }
 
   setBook(book: any) {
     this.sharedDataService.setBook(book)
+  }
+  
+  deleteBook (book: any) {
+    const bookIndex = this.books.indexOf(book)
+    localStorage.removeItem(book.id)
+
+    if (bookIndex > -1) {
+      this.books.splice(bookIndex, 1)
+    }
+
+    this.p = 1
+  }
+
+  editBook (book: any) {
+    this.books[this.books.indexOf(book)] = book
+    localStorage.setItem(book.id, JSON.stringify(book))
+
+    this.p = 1
   }
 
 }
