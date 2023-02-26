@@ -37,7 +37,9 @@ export class BookListComponent {
 
     this.sharedDataService.selectedSearchFilter.subscribe((searchFilter) => {
       this.searchFilter = searchFilter
+      this.p = 1
     })
+
   }
 
   addBook (book: any) {

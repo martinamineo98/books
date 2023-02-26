@@ -32,8 +32,8 @@ export class BookFormComponent {
     e.preventDefault()
     this.book = this.bookForm.value
     this.book.cover = '../../assets/cover.png'
-    console.log(this.book)
     this.bookListComponent.addBook(this.book)
+    this.bookForm.reset()
     
   }
 
