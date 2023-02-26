@@ -1,10 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
 
 @import 'minireset.min.css';
 
 :root {
   --system-font-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
   --system-font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,
@@ -16,4 +21,127 @@ body {
   background-color: #FFFFFF;
   color: #000000;
   font: 1.4rem var(--system-font-sans-serif);
+}
+
+button {
+  background-color: #f7de47;
+  border: 0;
+  border-radius: 15px;
+  font-weight: bold;
+  margin: 15px;
+  padding: 15px;
+  transition: all .5s ease-in-out;
+  text-transform: uppercase;
+}
+
+button:hover,
+button:focus {
+  cursor: pointer;
+  transform: scale(.9);
+}
+
+label {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+input {
+  border: 1px solid #EEEEEE;
+  border-radius: 5px;
+  padding: 2px 0;
+}
+
+fieldset {
+  border: 0;
+}
+
+/* WRAPPER */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 15px;
+  row-gap: 15px;
+  width: 100%;
+}
+
+/* BOOK-LIST & BOOK-PAGE */
+
+.book {
+  display: flex;
+  column-gap: 15px;
+  width: 100%;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.book-loop,
+.book-page {
+  column-gap: 15px;
+  display: flex;
+  row-gap: 15px;
+}
+
+.book-page .book {
+  justify-content: center;
+}
+
+.book-cover {
+  width: 100px;
+}
+
+.book-information {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  font: italic 1.75em bold var(--system-font-serif);
+}
+
+.book-author span {
+  text-decoration: underline;
+}
+
+/* BOOK-FORM */
+
+.book-form {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.book-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-form fieldset {
+  column-gap: 15px;
+  display: flex;
+  padding: 10px;
+}
+
+/* NGX-PAGINATION */
+
+.book-pagination {
+  margin-top: 30px;
+}
+
+.book-pagination .ngx-pagination a,
+.book-pagination .ngx-pagination .current {
+  border-radius: 10px;
+}
+
+.book-pagination .ngx-pagination .current {
+  color: #000000;
+  background-color: #f7de47;
+  font-weight: bold;
 }

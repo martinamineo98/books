@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap} from '@angular/router'
-import { BookListComponent } from '../book-list/book-list.component';
+import { SharedDataService } from '../shared-data.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-book-page',
@@ -12,9 +12,14 @@ export class BookPageComponent {
 
   book: any
 
-  receiveBook ($event: any) {
-    this.book = $event
-    console.log(this.book)
-  }
+  constructor(
+    private sharedDataService: SharedDataService
+  ) {}
   
+  ngOnInit() {
+    this.sharedDataService.selectedBook.subscribe((book) => {
+      this.book = book
+    })
+  }
+
 }

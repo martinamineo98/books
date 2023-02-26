@@ -1,13 +1,16 @@
 <div class="book-wrapper">
-  <div class="book" *ngFor="let book of books | paginate: { itemsPerPage: 3, currentPage: p }">
-    <img class="book-cover" src="{{ book.cover }}" alt="{{ book.title}}">
-    <div class="book-information">
-      <h3 class="book-title"><a routerLink="book" (click)="sendBook(book.id)">{{ book.title }}</a></h3>
-      <span class="book-description">{{ book.description }}</span>
-      <span class="book-author"><span>Book written by:</span> {{ book.author }}</span>
+  <div *ngIf="router.url === '/'" class="book-loop">
+    <div class="book" *ngFor="let book of books | filter:searchFilter | paginate: { itemsPerPage: 3, currentPage: p }">
+      <img class="book-cover" src="{{ book.cover }}" alt="{{ book.title}}">
+      <div class="book-information">
+        <h3 class="book-title"><a routerLink="book" (click)="setBook(book)">{{ book.title }}</a></h3>
+        <span class="book-description">{{ book.description }}</span>
+        <span class="book-author"><span>Book written by:</span> {{ book.author }}</span>
+      </div>
     </div>
   </div>
+
+  <router-outlet></router-outlet>
 </div>
 
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
-<router-outlet></router-outlet>
+<pagination-controls class="book-pagination" (pageChange)="p = $event" *ngIf="router.url === '/'"></pagination-controls>
