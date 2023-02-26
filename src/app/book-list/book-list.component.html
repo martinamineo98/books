@@ -9,8 +9,8 @@
       </div>
     </div>
   </div>
-  
+
   <router-outlet></router-outlet>
 </div>
 
-<pagination-controls (pageChange)="p = $event" *ngIf="router.url === '/'"></pagination-controls>
+<pagination-controls class="book-pagination" (pageChange)="p = $event" *ngIf="router.url === '/'"></pagination-controls>

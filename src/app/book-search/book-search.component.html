@@ -1,2 +1,2 @@
 <label for="book-search">Search: </label>
-<input [(ngModel)]="searchFilter" type="search" id="book-search" name="book-search" (ngModelChange)="setSearchFilter($event)">
+<input [routerLink]="['/']" [(ngModel)]="searchFilter" type="search" id="book-search" name="book-search" (ngModelChange)="setSearchFilter($event)">
