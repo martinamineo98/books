@@ -23,18 +23,12 @@ export class BookFormComponent {
     private bookListComponent: BookListComponent
   ) {}
 
-  ngOnInit() {
-
-  }
-
   onSubmit(e: any) {
-
     e.preventDefault()
     this.book = this.bookForm.value
     this.book.cover = '../../assets/cover.png'
-    console.log(this.book)
     this.bookListComponent.addBook(this.book)
-    
+    this.bookForm.reset()
   }
 
 }

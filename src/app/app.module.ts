@@ -14,6 +14,9 @@ import { BookPageComponent } from './book-page/book-page.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookFormComponent } from './book-form/book-form.component';
 import { BookSearchComponent } from './book-search/book-search.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { BookSearchAlternativeComponent } from './book-search-alternative/book-search-alternative.component';
+import { BookSearchResultsComponent } from './book-search-results/book-search-results.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { BookSearchComponent } from './book-search/book-search.component';
     BookPageComponent,
     BookListComponent,
     BookFormComponent,
-    BookSearchComponent
+    BookSearchComponent,
+    SidebarComponent,
+    BookSearchAlternativeComponent,
+    BookSearchResultsComponent
   ],
   imports: [
     BrowserModule,

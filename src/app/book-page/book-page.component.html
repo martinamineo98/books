@@ -5,6 +5,36 @@
       <h3 class="book-title">{{ book.title }}</h3>
       <span class="book-description">{{ book.description }}</span>
       <span class="book-author"><span>Book written by:</span> {{ book.author }}</span>
+
+      <div class="book-editing">
+        <button [routerLink]="['/']" (click)="deleteBook(book)" type="button" >delete</button>
+        <button (click)="editBook(book)" type="button">edit</button>
+
+        <div class="book-editing-block">
+          <form id="book-editing-form" [formGroup]="bookForm">
+
+            <fieldset>
+              <div>
+                <label for="book-title">Title: </label>
+                <input type="text" id="book-title" formControlName="title">
+              </div>
+          
+              <div>
+                <label for="book-author">Author: </label>
+                <input type="text" id="book-author" formControlName="author">
+              </div>
+
+              <div>
+                <label for="book-description">Description: </label>
+                <input type="text" id="book-description" formControlName="description">
+              </div>
+            </fieldset>
+          
+            <button type="button" (click)="onSubmit($event)" >submit</button>
+          
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>

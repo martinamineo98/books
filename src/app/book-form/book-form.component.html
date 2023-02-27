@@ -1,3 +1,5 @@
+<h2>Add Book</h2>
+
 <form id="book-form" [formGroup]="bookForm">
 
   <fieldset>
@@ -19,6 +21,6 @@
     </div>
   </fieldset>
 
-  <button type="button" (click)="onSubmit($event)">submit</button>
+  <button class="book-form-button" type="button" (click)="onSubmit($event)" [routerLink]="['/']">submit</button>
 
 </form>

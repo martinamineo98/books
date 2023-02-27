@@ -5,78 +5,30 @@
     "title": "this is a fake title for a fake book",
     "author": "john doe",
     "description": "this is a fake description for a fake book",
-    "cover": "./assets/cover.png"
+    "cover": "./assets/cover.png",
+    "tags": [
+      "fake"
+    ]
   },
-
   {
     "id": 2,
-    "title": "this is a fake title for a fake book",
-    "author": "john doe",
-    "description": "this is a fake description for a fake book",
+    "title": "this is another fake title for another fake book",
+    "author": "jane doe",
+    "description": "this is another fake description for another fake book",
     "cover": "./assets/cover.png"
   },
-
   {
     "id": 3,
-    "title": "this is a fake title for a fake book",
-    "author": "john doe",
-    "description": "this is a fake description for a fake book",
+    "title": "this is a very long fake title for another fake book",
+    "author": "john smith",
+    "description": "this a very long fake description for another fake book",
     "cover": "./assets/cover.png"
   },
-
   {
     "id": 4,
-    "title": "this is a fake title for a fake book",
-    "author": "john doe",
-    "description": "this is a fake description for a fake book",
-    "cover": "./assets/cover.png"
-  },
-
-  {
-    "id": 5,
-    "title": "this is a fake title for a fake book",
-    "author": "john doe",
-    "description": "this is a fake description for a fake book",
-    "cover": "./assets/cover.png"
-  },
-
-  {
-    "id": 6,
-    "title": "this is a fake title for a fake book",
-    "author": "john doe",
-    "description": "this is a fake description for a fake book",
-    "cover": "./assets/cover.png"
-  },
-
-  {
-    "id": 7,
-    "title": "this is a fake title for a fake book",
-    "author": "john doe",
-    "description": "this is a fake description for a fake book",
-    "cover": "./assets/cover.png"
-  },
-
-  {
-    "id": 8,
-    "title": "this is a fake title for a fake book",
-    "author": "john doe",
-    "description": "this is a fake description for a fake book",
-    "cover": "./assets/cover.png"
-  },
-
-  {
-    "id": 9,
-    "title": "this is a fake title for a fake book",
-    "author": "john doe",
-    "description": "this is a fake description for a fake book",
-    "cover": "./assets/cover.png"
-  },
-
-  {
-    "id": 10,
-    "title": "this is a fake title for a fake book",
-    "author": "john doe",
-    "description": "this is a fake description for a fake book",
+    "title": "this is a short title",
+    "author": "maria rossi",
+    "description": "this is a short description",
     "cover": "./assets/cover.png"
   }
 
