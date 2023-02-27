@@ -23,10 +23,6 @@ export class BookFormComponent {
     private bookListComponent: BookListComponent
   ) {}
 
-  ngOnInit() {
-
-  }
-
   onSubmit(e: any) {
     e.preventDefault()
     this.book = this.bookForm.value

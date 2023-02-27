@@ -14,6 +14,9 @@ export class SharedDataService {
   private searchFilter = new BehaviorSubject<any>('')
   selectedSearchFilter = this.searchFilter.asObservable()
 
+  private bookResults = new BehaviorSubject<any>('')
+  selectedBookResults = this.bookResults.asObservable()
+
   constructor() {}
 
   setBook(book: any) {
@@ -22,6 +25,10 @@ export class SharedDataService {
 
   setSearchFilter(str: any) {
     this.searchFilter.next(str)
+  }
+
+  setBookResults(books: any) {
+    this.bookResults.next(books)
   }
   
 }

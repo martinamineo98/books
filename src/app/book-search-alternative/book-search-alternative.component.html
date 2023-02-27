@@ -1,0 +1,11 @@
+<form id="book-search-alternative" [formGroup]="bookSearchForm">
+  <select name="book-categories" id="book-categories" formControlName="category">
+    <option value="title">title</option>
+    <option value="author">author</option>
+    <option value="description">description</option>
+  </select>
+
+  <input [routerLink]="['/']" type="text" formControlName="str">
+
+  <button type="submit" (click)="onSubmit($event)" [routerLink]="['/result']">search</button>
+</form>
