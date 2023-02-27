@@ -23,6 +23,21 @@ body {
   font: 1.4rem var(--system-font-sans-serif);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--system-font-serif);
+  font-style: italic;
+}
+
+h2,
+h3 {
+  font-size: 1.75em;
+}
+
 button {
   background-color: #f7de47;
   border: 0;
@@ -55,29 +70,44 @@ fieldset {
   border: 0;
 }
 
-/* WRAPPER */
+/* WRAPPER & GRID */
 
 .wrapper {
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 15px;
-  row-gap: 15px;
+  height: 100vh;
   width: 100%;
 }
 
+/* SIDEBAR */
+
+.sidebar {
+  background-color: #F9F9F9;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 15px;
+  row-gap: 30px;
+  width: 25%;
+}
+
 /* BOOK-LIST & BOOK-PAGE */
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  row-gap: 15px;
+  width: 75%;
+}
+
+.book-wrapper {
+  flex: 1;
+}
 
 .book {
   display: flex;
   column-gap: 15px;
   width: 100%;
-}
-
-.book-list {
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
 }
 
 .book-loop,
@@ -99,10 +129,6 @@ fieldset {
 .book-information {
   display: flex;
   flex-direction: column;
-}
-
-.book-title {
-  font: italic 1.75em bold var(--system-font-serif);
 }
 
 .book-author span {
@@ -132,6 +158,7 @@ fieldset {
 .book-form {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 30px;
   width: 100%;

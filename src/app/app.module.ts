@@ -14,6 +14,7 @@ import { BookPageComponent } from './book-page/book-page.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookFormComponent } from './book-form/book-form.component';
 import { BookSearchComponent } from './book-search/book-search.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BookSearchComponent } from './book-search/book-search.component';
     BookPageComponent,
     BookListComponent,
     BookFormComponent,
-    BookSearchComponent
+    BookSearchComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
