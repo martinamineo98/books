@@ -155,6 +155,16 @@ fieldset {
 
 /* BOOK-EDITING-BLOCK */
 
+.book-editing,
+.book-editing form,
+.book-editing form button {
+  margin-top: 10px;
+}
+
+.book-editing button:not(:last-child) {
+  margin-right: 5px;
+}
+
 .book-editing-block {
   height: 0px;
   overflow: hidden;
