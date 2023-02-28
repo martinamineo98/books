@@ -1,13 +1,14 @@
 <h2>Advanced Search</h2>
 
-<form id="book-search-alternative" [formGroup]="bookSearchForm">
-  <select name="book-categories" id="book-categories" formControlName="category">
+<form id="book-search-alternative" [formGroup]="form">
+  <select name="book-categories" id="book-categories" formControlName="cat">
     <option value="title">title</option>
     <option value="author">author</option>
     <option value="description">description</option>
   </select>
-
-  <input [routerLink]="['/search']" type="text" formControlName="str">
-
-  <button type="submit" (click)="onSubmit($event)" [routerLink]="['/result']">search</button>
+  
+  <input type="text" formControlName="str">
+  <button type="submit" (click)="onSubmit($event)">search</button>
 </form>
+
+<app-book-list [books]="books" [p]="p"></app-book-list>

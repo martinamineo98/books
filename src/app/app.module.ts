@@ -16,7 +16,7 @@ import { BookFormComponent } from './book-form/book-form.component';
 import { BookSearchComponent } from './book-search/book-search.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BookSearchAlternativeComponent } from './book-search-alternative/book-search-alternative.component';
-import { BookSearchResultsComponent } from './book-search-results/book-search-results.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { BookSearchResultsComponent } from './book-search-results/book-search-re
     BookSearchComponent,
     SidebarComponent,
     BookSearchAlternativeComponent,
-    BookSearchResultsComponent
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

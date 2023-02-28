@@ -4,7 +4,8 @@ import { SharedDataService } from '../shared-data.service';
 @Component({
   selector: 'app-book-search',
   templateUrl: './book-search.component.html',
-  styleUrls: ['./book-search.component.css']
+  styleUrls: ['./book-search.component.css'],
+  host: {'class': 'book-search'}
 })
 
 export class BookSearchComponent {
