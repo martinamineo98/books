@@ -30,7 +30,14 @@ export class BookPageComponent {
   }
 
   deleteBook(book: any) {
-    this.homepageComponent.deleteBook(book)
+    const response = confirm('Are you sure you want to delete it?')
+    
+    if (response) {
+      this.homepageComponent.deleteBook(book)
+      alert("Element was deleted.")
+    } else {
+      alert("Element wasn't deleted.")
+    }
   }
 
   onSubmit(e: any) {
