@@ -5,10 +5,7 @@
     "title": "this is a fake title for a fake book",
     "author": "john doe",
     "description": "this is a fake description for a fake book",
-    "cover": "./assets/cover.png",
-    "tags": [
-      "fake"
-    ]
+    "cover": "./assets/cover.png"
   },
   {
     "id": 2,

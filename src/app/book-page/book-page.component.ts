@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { SharedDataService } from '../shared-data.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { BookListComponent } from '../book-list/book-list.component';
+import { HomepageComponent } from '../homepage/homepage.component';
 
 @Component({
   selector: 'app-book-page',
   templateUrl: './book-page.component.html',
-  styleUrls: ['./book-page.component.css']
+  styleUrls: ['./book-page.component.css'],
+  host: {'class': 'book-page'}
 })
 
 export class BookPageComponent {
@@ -18,21 +18,26 @@ export class BookPageComponent {
     title: new FormControl(''),
     author: new FormControl(''),
     description: new FormControl('')
-  })  
+  })
 
   constructor(
     private sharedDataService: SharedDataService,
-    private bookListComponent: BookListComponent
+    private homepageComponent: HomepageComponent
   ) {}
-  
+
   ngOnInit() {
-    this.sharedDataService.selectedBook.subscribe((book) => {
-      this.book = book
-    })
+    this.sharedDataService.selectedBook.subscribe((book) => this.book = book)
   }
 
   deleteBook(book: any) {
-    this.bookListComponent.deleteBook(book)
+    const response = confirm('Are you sure you want to delete it?')
+    
+    if (response) {
+      this.homepageComponent.deleteBook(book)
+      alert("Element was deleted.")
+    } else {
+      alert("Element wasn't deleted.")
+    }
   }
 
   onSubmit(e: any) {
@@ -50,7 +55,7 @@ export class BookPageComponent {
       cover: this.book.cover
     }
 
-    this.bookListComponent.editBook(this.book, newBook)
+    this.homepageComponent.editBook(this.book, newBook)
     this.book = newBook
     
     blockTitle.textContent = newBook.title

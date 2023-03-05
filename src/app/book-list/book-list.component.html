@@ -1,7 +1,5 @@
-<app-book-search class="book-search"></app-book-search>
-
 <div class="book-wrapper">
-  <div *ngIf="router.url === '/'" class="book-loop">
+  <div class="book-loop">
     <div class="book" *ngFor="let book of books | filter:searchFilter | paginate: { itemsPerPage: 3, currentPage: p }">
       <img class="book-cover" src="{{ book.cover }}" alt="{{ book.title}}">
       <div class="book-information">
@@ -11,8 +9,6 @@
       </div>
     </div>
   </div>
-
-  <router-outlet></router-outlet>
 </div>
 
-<pagination-controls class="book-pagination" (pageChange)="p = $event" *ngIf="router.url === '/'"></pagination-controls>
+<pagination-controls class="book-pagination" (pageChange)="p = $event"></pagination-controls>

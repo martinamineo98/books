@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { BookListComponent } from '../book-list/book-list.component';
-
 import { SharedDataService } from '../shared-data.service';
+
+// Import HomepageComponent
+
+import { HomepageComponent } from '../homepage/homepage.component';
+import { verifyHostBindings } from '@angular/compiler';
 
 @Component({
   selector: 'app-book-search-alternative',
@@ -13,45 +16,53 @@ import { SharedDataService } from '../shared-data.service';
 
 export class BookSearchAlternativeComponent {
 
-  bookSearchForm = new FormGroup({
-    category: new FormControl(''),
+  books: any[] = this.homepageComponent.books
+  p: number = 1
+
+  form = new FormGroup({
+    cat: new FormControl(''),
     str: new FormControl('')
   })
 
   constructor(
-    private bookListComponent: BookListComponent,
-    private sharedDataService: SharedDataService
+    private sharedDataService: SharedDataService,
+    private homepageComponent: HomepageComponent
   ) {}
 
-  itContains(category: any, str: any) {
-    const books = this.bookListComponent.books
-    const newBooks = []
+  resetBooks() {
+    this.books = this.homepageComponent.initializeBooks()
+  }
 
-    for (let book of books) {
-      for (let [key, value] of Object.entries(book)) {
-        if (key === category) {
-          if (value.toLowerCase().includes(str)) {
-            newBooks.push(book)
+  onSubmit(e: any) {
+    this.resetBooks()
+
+    let cat = this.form.value.cat
+    let str = this.form.value.str
+
+    e.preventDefault()
+    this.itContains(cat, str)
+    this.form.reset()
+  }
+
+  itContains(cat: any, str: any) {
+    const foundBooks = []
+
+    for (let book of this.books) {
+      for (let [k, value] of Object.entries(book)) {
+        if (k === cat) {
+          
+          // Fix to unknown type error
+          let v: any = value
+
+          if (v.toLowerCase().includes(str)) {
+            foundBooks.push(book)
           }
         }
       }
     }
 
-    return newBooks
-  }
-
-  setBookResults(books: any) {
-    this.sharedDataService.setBookResults(books)
-  }
-
-  onSubmit(e: any) {
-    let category  = this.bookSearchForm.value.category
-    let str = this.bookSearchForm.value.str
-
-    this.setBookResults(this.itContains(category, str))
-
-    e.preventDefault()
-    this.bookSearchForm.reset()
+    this.books = foundBooks
+    this.homepageComponent.resetPagination()
   }
 
 }
